@@ -23,6 +23,42 @@ Things you may want to cover:
 
 * ...
 
+## usersテーブル
+
+|Column|Type|option|
+|------|----|------|
+|email|string|null: false|
+|password|string|null: false|
+|username|string|null: false|
+
+### アソシエーション
+  - has_many :groups
+  - has_many :messeages
+  - has_many :groups, through: :groups_users
+
+
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|group_name|string|null: false|
+|group_member|string|null: false|
+
+### アソシエーション
+  - has_many :users 
+  - has_many :messeages
+  - has_many :users, through: :groups_users
+
+## messeageテーブル
+  |Column|Type|Options|
+  |------|----|-------|
+  |text|text|null: false|
+  |date|datetime|
+  |user_id|integer|null: false, foreign_key: true|
+
+  
+### アソシエーション
+  - beling_to :users
+
 
 ## group_userテーブル
 
@@ -32,5 +68,5 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-_ belong_to: group
-_ belong_to: user
+- belong_to: group
+- belong_to: user

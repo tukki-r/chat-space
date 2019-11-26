@@ -32,34 +32,34 @@ Things you may want to cover:
 |username|string|null: false|
 
 ### アソシエーション
-  - has_many :groups
   - has_many :messeages
+  - has_many :group_user
   - has_many :groups, through: :groups_users
 
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
-|group_member|string|null: false|
+|name|string|null: false|
+
 
 ### アソシエーション
-  - has_many :users 
   - has_many :messeages
+  - has_many :group_user
   - has_many :users, through: :groups_users
 
 ## messeageテーブル
   |Column|Type|Options|
   |------|----|-------|
-  |text|text|null: false|
+  |text|text||
   |image|text||
   |date|datetime|
   |user_id|integer|null: false, foreign_key: true|
 
   
 ### アソシエーション
-  - beling_to :users
-
+  - beling_to :user
+  - beling_to :group
 
 ## group_userテーブル
 

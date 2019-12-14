@@ -1,0 +1,17 @@
+.side-bar
+  .side-bar__header
+    .side-bar__header_list
+      .side-bar__header_list_name
+        name
+      .side-bar__header_list_menu
+        .icon
+          = link_to '#' do
+            = icon('fas', 'edit', class: 'icon')
+        .icon
+          = link_to '#' do
+            = icon('fas', 'cog', class: 'icon') 
+  .side-bar__groups
+    .side-bar__groups_group-name
+      name
+    .side-bar__groups_message
+      message

@@ -35,22 +35,24 @@
     }
       }
      }
-  &__groups{
+  .groups{
   height: calc(100% - 100px);
   width: 300px;
   background-color: #2f3e51;
   float: left;
   color: $white;
   padding: 20px;
-    &_group-name{
-      color: $white;
-      margin-bottom: 5px;
-      font-size: 15px;
-    }
-    &_message{
-      color: $white;
-      margin-bottom: 40px;
-      font-size: 11px;
+    .group{
+      &__group-name{
+        color: $white;
+        margin-bottom: 5px;
+        font-size: 15px;
+      }
+      &__message{
+        color: $white;
+        margin-bottom: 40px;
+        font-size: 11px;
+      }
     }
 }
 }

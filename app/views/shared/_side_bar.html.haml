@@ -1,20 +1,20 @@
 .side-bar
   .side-bar__header
-    .side-bar__header_list
-      .side-bar__header_list_name
+    .side-bar__header__list
+      .side-bar__header__list__name
         = current_user.name
-      .side-bar__header_list_menu
-        .icon
+      .side-bar__header__list__menu
+        .side-bar__header__list__menu__icon
           = link_to new_group_path do
             = icon('fas', 'edit', class: 'icon')
-        .icon
+        .side-bar__header__list__menu__icon
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: 'icon') 
-  .groups
+  .side-bar__groups
     - current_user.groups.each do |group|
-      .group
+      .side-bar__groups__group
         = link_to group_messages_path(group) do
-          .group__name
+          .side-bar__groups__group__name
             = group.name
-          .group__message
-            メッセージはまだありません。
+          .side-bar__groups__group__message
+            = group.show_last_message

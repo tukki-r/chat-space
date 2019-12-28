@@ -7,7 +7,7 @@
     height: 100px;
     width: 300px;
     background-color: #253141;
-    &_list{
+    &__list{
       height: 100px;
       width: calc(260px - 20px -20px);
       display: flex;
@@ -15,13 +15,13 @@
       margin: 0 20px;
       position: relative;
       justify-content: space-between;
-      &_name{
+      &__name{
         color: $white;
         line-height: center;
         width: 60px;
         font-size: 16px;
       }
-      &_menu{ 
+      &__menu{ 
         line-height: center;
         display: flex;
         width: 60px;
@@ -32,18 +32,18 @@
           list-style:none ;
           margin-left: 5px;
         }
-    }
       }
-     }
-  .groups{
-  height: calc(100% - 100px);
-  width: 300px;
-  background-color: #2f3e51;
-  float: left;
-  color: $white;
-  padding: 20px;
-    .group{
-      &__group-name{
+    }
+  }
+  &__groups{
+    height: calc(100% - 100px);
+    width: 300px;
+    background-color: #2f3e51;
+    float: left;
+    color: $white;
+    padding: 20px;
+    &__group{
+      &__name{
         color: $white;
         margin-bottom: 5px;
         font-size: 15px;
@@ -54,5 +54,5 @@
         font-size: 11px;
       }
     }
-}
+  }
 }

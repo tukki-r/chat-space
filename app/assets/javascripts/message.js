@@ -57,7 +57,7 @@ $('#new_message').on('submit', function(e){
       $('.chat-main__messages').append(html);
       $('form')[0].reset();
       $('.chat-main__form__submit').attr('disabled', false);
-      $('.chat-main__messages__contents-data').animate({ scrollTop: $('chat-main__messages__contents-data')[0].scrollHeight});
+      $('.chat-main__messages').animate({ scrollTop: $('.chat-main__messages')[0].scrollHeight});
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");

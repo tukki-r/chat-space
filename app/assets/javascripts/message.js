@@ -1,4 +1,18 @@
 $(function(){
+    last_message_id = $('.chat-main__messages__contents-data:last').data("message-id");
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+      .done(function(messages){
+        console.log('success');
+      })
+      .fail(function(){
+        console.log('error');
+      });
+
   function buildHTML(message){
     if ( message.image ) {
       var html =

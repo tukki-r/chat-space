@@ -6,15 +6,19 @@ $(function(){
       dataType: 'json',
       data: {id: last_message_id}
     })
-      .done(function(messages){
-        console.log('success');
-      })
-      .fail(function(){
-        console.log('error');
+    .done(function(messages){
+      var insertHTML = '';
+      $.each(messages, function(i, message) {
+        insertHTML += buildHTML(message)
       });
+      $('.chat-main__messages__contents-data').append(insertHTML);
+    })
+    .fail(function(){
+      console.log('error');
+    });
 
   function buildHTML(message){
-    if ( message.image ) {
+    if ( message.content && message.image ) {
       var html =
         `<div class="chat-main__messages__contents-data" data-message-id=${message.id}>
           <div class="chat-main__messages__contents-data__update-date">
@@ -34,7 +38,7 @@ $(function(){
         </div>`
       return html;
     }
-      else{
+      else if (message.content){
         var html =
           `<div class="chat-main__messages__contents-data" data-message-id=${message.id}>
              <div class="chat-main__messages__contents-data__update-date">

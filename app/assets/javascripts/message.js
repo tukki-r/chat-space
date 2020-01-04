@@ -1,4 +1,5 @@
-$(function(){
+$(function() {
+  var reloadMessages = function() {
     last_message_id = $('.chat-main__messages__contents-data:last').data("message-id");
     $.ajax({
       url: "api/messages",
@@ -16,7 +17,8 @@ $(function(){
     .fail(function(){
       console.log('error');
     });
-
+  };
+  
   function buildHTML(message){
     if ( message.content && message.image ) {
       var html =
@@ -55,9 +57,9 @@ $(function(){
               </p>
              </div>
            </div>`
-        return html;
       };
-  }
+      return html;
+  };
 $('#new_message').on('submit', function(e){
   e.preventDefault();
   var formData = new FormData(this);
@@ -81,4 +83,5 @@ $('#new_message').on('submit', function(e){
       alert("メッセージ送信に失敗しました");
     });
 })
+setInterval(reloadMessages, 7000);
 });

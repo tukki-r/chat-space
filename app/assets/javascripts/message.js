@@ -15,12 +15,10 @@ $(function() {
       });
       $('.chat-main__messages').append(insertHTML);
       $('.chat-main__messages').animate({ scrollTop: $('.chat-main__messages')[0].scrollHeight});
-      $("#new_message")[0].reset();
-      $(".form__submit").prop("disabled", false);
       }
     })
     .fail(function(){
-      console.log('error');
+      alert('error');
     });
   };
   

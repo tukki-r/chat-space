@@ -8,11 +8,16 @@ $(function() {
       data: {id: last_message_id}
     })
     .done(function(messages){
+      if (messages.length !== 0) {
       var insertHTML = '';
       $.each(messages, function(i, message) {
         insertHTML += buildHTML(message)
       });
-      $('.chat-main__messages__contents-data').append(insertHTML);
+      $('.chat-main__messages').append(insertHTML);
+      $('.chat-main__messages').animate({ scrollTop: $('.chat-main__messages')[0].scrollHeight});
+      $("#new_message")[0].reset();
+      $(".form__submit").prop("disabled", false);
+      }
     })
     .fail(function(){
       console.log('error');
@@ -83,5 +88,7 @@ $('#new_message').on('submit', function(e){
       alert("メッセージ送信に失敗しました");
     });
 })
-setInterval(reloadMessages, 7000);
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+  setInterval(reloadMessages, 5000);
+  }
 });

@@ -43,7 +43,6 @@ $(function() {
             <img class="lower-message__image" src=${message.image}>
           </div>
         </div>`
-      return html;
     }
       else if (message.content){
         var html =
@@ -62,6 +61,22 @@ $(function() {
               </p>
              </div>
            </div>`
+      }
+      else if (message.image) {
+        var html =
+          `<div class="chat-main__messages__contents-data" data-message-id=${message.id}> 
+            <div class="chat-main__messages__contents-data__update-date">
+              <div class="chat-main__messages__contents-data__update-date__name">
+                ${message.user_name}
+            </div>
+            <div class="chat-main__messages__contents-data__update-date__date">
+              ${message.created_at}
+            </div>
+          </div> 
+          <div class="chat-main__messages__contents-data__messages-text">
+            <img class="lower-message__image" src=${message.image}>
+          </div>
+        </div>`
       };
       return html;
   };

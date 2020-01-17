@@ -43,6 +43,7 @@
     width: calc(100vw - 300px);
     background-color: #fafafa;
     position: absolute;
+    overflow: scroll; 
     &__contents-data{
       &__update-date{
         margin: 20px 20px 5px 40px;
@@ -109,50 +110,3 @@
     }
   }
 }
-//     &__send-message{
-//       display: flex;
-//       justify-content: space-between;
-//       height: 90px;
-//       &__input-box{
-//         line-height: 50px;
-//         background-color: $white;
-//         height: 50px;
-//         width: 960px;
-//         padding: 0 10px;
-//         display: flex;
-//         justify-content: space-between;
-//         border-style: none;
-//         margin: 20px 15px 0 40px;
-//         &__type-text{
-//           color: #999999;
-//           font-size: 17px;
-//           #new_message{
-//             display: flex;
-//           }
-//         }
-//         &__sample{
-//           &__sample-icon{
-//             color: black;
-//             list-style:none ;
-//             margin-left: 5px;
-//             font-size: 23px;
-//             .hidden{
-//               display: none;
-//             }
-//           }
-//         }
-//       }
-//       &__submit-message{
-//         .form__submit{
-//           height: 50px;
-//           line-height: 48px;
-//           padding: 0 20px;
-//           //margin: 20px 40px 0 0;
-//           color:$white;
-//           background-color: $sky-blue;
-
-//         }
-//       }
-//     }
-//   }
-// }

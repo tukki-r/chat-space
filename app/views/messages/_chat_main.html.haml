@@ -24,18 +24,3 @@
           = icon('fas', 'image', class: 'icon')
           = f.file_field :image, class: 'hidden'
       = f.submit 'send', class: 'chat-main__form__submit'
-
-  
-  -# .chat-main__form
-  -#   .chat-main__form__send-message
-  -#     .chat-main__form__send-message__input-box
-  -#       .chat-main__form__send-message__input-box__type-text 
-  -#         = form_for [@group, @message] do |f|
-  -#           = f.text_field :content, class: 'chat-main__form_send-message_input-box_type-text', placeholder: 'type a message'
-  -#           .chat-main__form__send-message__input-box__sample
-  -#             .chat-main__form__send-message__input-box__sample__sample-icon 
-  -#               = f.label :image, class: 'form__mask__image' do
-  -#                 = icon('fas', 'image', class: 'icon')
-  -#                 = f.file_field :image, class: 'hidden'
-  -#           .chat-main__form__send-message__submit-message 
-  -#             = f.submit 'Send', class: 'form__submit'
